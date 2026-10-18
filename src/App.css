@@ -1,0 +1,137 @@
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.help-button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--navy);
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.875rem;
+  font: inherit;
+}
+
+.content {
+  flex: 1;
+  width: min(70rem, 100%);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  color: var(--navy);
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--text);
+  max-width: 52ch;
+}
+
+.primary-cta {
+  justify-self: start;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: var(--accent);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 0.8rem 1.4rem;
+  font: inherit;
+}
+
+.situations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.85rem;
+}
+
+.situation-card {
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--surface);
+  color: var(--navy);
+  padding: 1rem;
+  min-height: 7.5rem;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  font: inherit;
+}
+
+.situation-card.anomaly {
+  border-color: var(--danger);
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.card-description {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.help-button,
+.primary-cta,
+.situation-card {
+  cursor: pointer;
+}
+
+.help-button:focus-visible,
+.primary-cta:focus-visible,
+.situation-card:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid rgba(250, 204, 21, 0.55);
+  outline-offset: 2px;
+}
+
+.primary-cta:hover,
+.primary-cta:active {
+  background: #f9d338;
+}
+
+@media (max-width: 42rem) {
+  .topbar {
+    padding: 0.875rem 1rem;
+  }
+
+  .hero,
+  .situation-card {
+    padding: 0.95rem;
+  }
+}

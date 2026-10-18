@@ -1,0 +1,50 @@
+import './App.css'
+
+const situations = [
+  { title: 'Sortir du dépôt', description: 'Accéder aux étapes dès qu’elles seront disponibles.' },
+  { title: 'Avant de rouler', description: 'Préparer la mise en service en suivant la procédure.' },
+  { title: 'Arrivée en station', description: 'Retrouver rapidement les actions à effectuer.' },
+  { title: 'Anomalie', description: 'Consulter la conduite à tenir en cas de situation inhabituelle.', variant: 'anomaly' },
+]
+
+function App() {
+  return (
+    <div className="page">
+      <header className="topbar">
+        <a className="brand" href="#" aria-label="Accueil Tram">
+          Tram
+        </a>
+        <button type="button" className="help-button">
+          Aide
+        </button>
+      </header>
+
+      <main className="content">
+        <section className="hero" aria-labelledby="hero-title">
+          <h1 id="hero-title">Votre guide opérationnel tramway</h1>
+          <p>
+            Sélectionnez une situation pour afficher clairement les étapes à suivre.
+          </p>
+          <button type="button" className="primary-cta">
+            Commencer
+          </button>
+        </section>
+
+        <section className="situations" aria-label="Situations">
+          {situations.map((situation) => (
+            <button
+              key={situation.title}
+              type="button"
+              className={`situation-card${situation.variant ? ` ${situation.variant}` : ''}`}
+            >
+              <span className="card-title">{situation.title}</span>
+              <span className="card-description">{situation.description}</span>
+            </button>
+          ))}
+        </section>
+      </main>
+    </div>
+  )
+}
+
+export default App
